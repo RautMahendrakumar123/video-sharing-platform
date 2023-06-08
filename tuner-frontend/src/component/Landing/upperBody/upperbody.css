@@ -1,0 +1,20 @@
+
+.container {
+   
+    /* background-image: url("https://wallpapercave.com/wp/wp2599594.jpg"); */
+    position: relative;
+}
+.content {
+    position: absolute;
+    bottom: 32px;
+    left: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 300px;
+    text-align: left;
+}
+
+.profile > span {
+padding: 10px;
+}
