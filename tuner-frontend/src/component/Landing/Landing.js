@@ -4,7 +4,7 @@ import LowerBody from './lowerBody/LowerBody'
 
 
 const Landing = () => {
-  // const [data,setData]=useState(false)
+ 
   return (<div>
 
     <UpperBody />
