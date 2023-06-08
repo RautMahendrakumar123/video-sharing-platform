@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const NavBar = () => {
   return (
     <div className='navbar'>
-      <h1>Tuner</h1>
+      <h2>Tuner</h2>
       <input type='text' placeholder='Search'/>
       <div className='buttons'>
      <Link to='/signin'><span>Login</span></Link> 

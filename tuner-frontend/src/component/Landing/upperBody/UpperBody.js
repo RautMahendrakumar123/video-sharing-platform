@@ -4,7 +4,7 @@ import "./upperbody.css"
 const UpperBody = () => {
     return (<>
         <div className='container'>
-            <img src='https://wallpapercave.com/wp/wp2599594.jpg' style={{height:"100%",width:"100%"}}/>
+            <img src='https://www.desktopbackground.org/download/o/2013/11/06/665679_godzilla-2014-movie-poster-wallpapers_1920x1080_h.jpg' style={{height:"400px",width:"100%",objectFit:"cover"}}/>
         </div>
         <div className='content'>
             <div>

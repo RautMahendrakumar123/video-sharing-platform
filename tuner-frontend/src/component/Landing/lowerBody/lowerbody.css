@@ -1,3 +1,27 @@
 .lowerbody-container {
-height: 400px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-evenly;
+background-color: #0F121FF5;
+height: 50%;
+
+}
+/* .lowerbody-container2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #0F121FF5;
+    height: 800px;
+} */
+
+.view{
+    background-color: #0F121FF5;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 27px;
+    color: white
+}
+
+.view p{
+    font-size: 0.8em;
 }
