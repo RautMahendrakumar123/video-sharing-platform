@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    background-color: #000000;
+    height: 40px;
+}
+.navbar > input {
+    height: 30px;
+    width: 500px;
+    padding: 0 25px;
+    background-color: #191919;
+    border-radius: 30px;
+    border: 1px solid #9D9C9C;
+color: #FFFFFF;
+}
+h1 {
+color: #C4B4F8;
+position: relative;
+bottom: 28px;
+left: 10px;
+}
+
+.buttons {
+    display: flex;
+    
+}
+.buttons > span {
+    color: #FFFFFF;
+    margin: 3px;
+}

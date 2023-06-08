@@ -1,12 +1,11 @@
 
 import './App.css';
+import Router from './Router';
 
 function App() {
   return (
     <div className="App">
-     Hello World
-     hitesh patil
-     mahendra
+<Router />
     </div>
   );
 }
