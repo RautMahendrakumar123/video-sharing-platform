@@ -4,7 +4,7 @@ import './Navbar.css'
 const NavBar = () => {
   return (
     <div className='navbar'>
-      <h1>Tuner</h1>
+      <h2>Tuner</h2>
       <input type='text' placeholder='Search'/>
       <div className='buttons'>
       <span>Login</span>
