@@ -24,7 +24,7 @@ router.post("/signup",async(req,resp)=>{
     })}
     else{
         resp.status(400).json({
-            error:"plzz enter all the feilds"
+            error:"Please enter all the fields"
         })
     }
 })

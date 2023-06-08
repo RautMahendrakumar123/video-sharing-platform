@@ -19,5 +19,5 @@ mongoose.connection.on("error",()=>{
 
 app.use(require("./Routes/auth"))
 app.listen(process.env.PORT,()=>{
-    console.log(`server runnig on port ${process.env.PORT}`)
+    console.log(`server running on port ${process.env.PORT}`)
 })
