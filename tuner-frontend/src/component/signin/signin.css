@@ -1,0 +1,23 @@
+.main-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+  
+}
+.left-signin {
+    flex-basis: 60%;  
+    background-image: url("https://hdqwalls.com/wallpapers/darth-maul-star-wars-fanart-8a.jpg");  
+   padding-left: 30px;
+    object-fit: contain;
+}
+
+.right-signin {
+    flex-basis: 40%;
+padding-top: 15%;
+color: #FFFFFF;
+background-color: #0F121FF5;
+}
+
+::placeholder {
+    color: #D0DBE5;
+}
