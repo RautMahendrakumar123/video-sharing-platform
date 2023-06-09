@@ -16,15 +16,18 @@ setFormdata({
 })
   }
 
-  const formsubmit = async (e) =>{
+  const formsubmit =  (e) =>{
     e.preventDefault()
    
-    await fetch(`http://localhost:8080/signin`,{
+    fetch(`http://localhost:8080/signin`,{
       method:"POST",
-      headers:{},
-      body:formdata
+      headers: {'Content-Type': 'application/json'},
+      body:JSON.stringify(formdata)
     })
-    .then(res=>res.json())
+    .then(res=>res.json()).then((data)=>{
+      console.log(data);
+      localStorage.setItem('token',data.token)
+    })
   }
 
 
@@ -50,13 +53,13 @@ setFormdata({
           </div>
           
           <div>
-            <input type='text' placeholder='Password' 
+            <input type='password' placeholder='Password' 
             name='password'
             value={formdata.password}
             onChange={handlechange}
             />
           </div>
-         
+          <button type='submit' className='submit-button' >Sign In</button>
         </form>
       </div>
 
