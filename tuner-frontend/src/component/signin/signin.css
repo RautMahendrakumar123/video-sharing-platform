@@ -13,11 +13,13 @@
 
 .right-signin {
     flex-basis: 40%;
-padding-top: 15%;
 color: #FFFFFF;
 background-color: #0F121FF5;
 }
 
 ::placeholder {
     color: #D0DBE5;
+}
+form{
+    margin-bottom: 50px;
 }

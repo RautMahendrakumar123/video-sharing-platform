@@ -1,23 +1,118 @@
 .main-container {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 120vh;
   
 }
 .left-signin {
+    position: relative;
     flex-basis: 55%;  
-    background-image: url("https://hdqwalls.com/wallpapers/darth-maul-star-wars-fanart-8a.jpg");  
-   padding-left: 30px;
-    object-fit: contain;
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/614/396/934/johnny-depp-captain-jack-sparrow-pirates-of-the-caribbean-dead-men-tell-no-tales-wallpaper-preview.jpg");  
+    /* background-color: #000000; */
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
 .right-signin {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 30px;
     flex-basis: 45%;
 padding-top: 15px;
 color: #FFFFFF;
-background-color: #0F121FF5;
+background-color: #0d0f19f5;
 }
 
 ::placeholder {
     color: #D0DBE5;
 }
+
+form div input{
+    border: none;
+    border-bottom: 2px solid #989898;
+    background-Color:#161924f5;
+    color:#454647;
+    width:250px;
+    margin-bottom: 10px;
+    height: 20px;
+    padding: 10px 3px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* background-color: ; */
+}
+.left-signin div h1{
+    font-size: 120px;
+     position: relative;
+      top: 150px;
+       text-align: left;
+       color: #C4B4F8;
+}
+.submit-button{
+    padding: 8px 25px;
+    background-color: #C4B4F8;
+    color: #FFFFFF;
+    border-radius: 20px;
+    font-weight: 700;
+    margin-top: 30px;
+}
+.select-image{
+    height:60px;
+    width:60px;
+    border-radius:99%;
+    background-color:#FFFFFF71;
+    border:none;
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative
+}
+.select-image input{
+    opacity: 0.0;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    width:100%;
+    height:100%
+}
+.select-image input:hover{
+    cursor: pointer;
+}
+.right-signin h2{
+    font-size: 40px;
+     font-weight: 600;
+     color:#FFFFFF;
+     margin-bottom:-30px;
+     margin-right: 20px;
+}
+form{
+    margin-top: 50px;
+}
+.left-signin div h1{
+    /* margin-top: -10px; */
+    font-size: 5em;
+
+}
+.left-signin div h3{
+    font-size: 35px;
+     position: relative;
+      top: 90px;
+       text-align: left;
+        width: 390px;
+         font-weight: 400; 
+         left: 10px;
+          color: #FFFFFF 
+}
+.left-signin div p{
+position:absolute;
+color: white;
+bottom: 120px;
+font-style: 700;
+left: 40px;
+font-size: 1.5em;
+border-bottom: 2px solid white;
+
+}
+
