@@ -12,7 +12,7 @@ const LowerBody = ({data,setData}) => {
       <p>Recent</p>
       <p style={{color:"#C4B4F8"}} onClick={()=>{
         setData(!data)
-      }} >View All</p>
+      }} >ViewAll</p>
     </div>
 <div className='lowerbody-container'>
   {

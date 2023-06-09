@@ -22,7 +22,7 @@ const resisterSchema=new mongoose.Schema({
         type:String,
         required:true
      },
-     confirmPassword:{
+     confirmpassword:{
         type:String
      }
 })
