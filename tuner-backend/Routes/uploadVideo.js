@@ -18,7 +18,16 @@ router.post("/upload",Validation,async(req,resp)=>{
     
 })
 
-router.get('/myvideos', )
+router.get('/home',async (req,resp)=>{
+try{
+const data = await Video.find()
+resp.status(200).json(data)
+}catch(err){
+resp.json({message:err.message})
+}
+})
+
+
 
 module.exports=router
 
