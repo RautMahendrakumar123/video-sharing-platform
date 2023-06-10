@@ -1,5 +1,5 @@
 import React from 'react'
-import Cards from '../Landing/Card'
+import Cards from '../../component/Cards/Card'
 import './search.css'
 
 const Search = () => {
