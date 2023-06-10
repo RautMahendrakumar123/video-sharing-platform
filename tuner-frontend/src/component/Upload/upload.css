@@ -1,0 +1,41 @@
+.Container {
+    width: 500px;
+    height:400px;
+    margin:10% 28%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color:rgb(37, 48, 37); */
+    flex-direction: column;
+    border-radius: 3%;
+    display: flex;
+    z-index: 2;
+}
+
+.Wrapper {
+    height: 400px;
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.623);
+    color: white;
+    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+ 
+}
+
+.heading-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.file-input {
+    border: 1px solid gray;
+    color: rgb(246, 243, 239);
+    border-radius: 3px;
+    padding: 20px;
+    background-color:black;
+    margin-left: 3%;
+    margin-right: 3%;
+    height: 150px;
+  }

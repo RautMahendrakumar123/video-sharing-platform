@@ -25,6 +25,12 @@ useEffect(() => {
       navigate("/Search")
     }
   }
+
+  const signout = ()=>{
+    localStorage.setItem('token','')
+    settoggle(false)
+  }
+
   return (
     <>
 
@@ -45,7 +51,7 @@ useEffect(() => {
        <span>|</span>
        <span style={{cursor:'pointer'}} onClick={()=>{setOpen(true)}}>Upload</span>
        <span>|</span>
-       <span>Sign out</span>
+       <span onClick={signout} style={{cursor:"pointer"}}>Sign out</span>
      </div>
    </div>}
    {open && <Upload setOpen={setOpen}/>}
