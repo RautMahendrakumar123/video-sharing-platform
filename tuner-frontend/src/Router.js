@@ -5,6 +5,7 @@ import Landing from './component/Landing/Landing'
 import SignIn from './component/signin/SignIn'
 import Register from './component/register/Register'
 import Search from "./component/search/Search"
+import MyVideos from './component/myVideos/MyVideos'
 
 
 
@@ -17,6 +18,7 @@ const Router = () => {
     <Route path='/Signin' element={<SignIn />}/>
     <Route path='/Register' element={<Register />}/>
     <Route path='/Search' element={<Search />}/>
+    <Route path='/myvideos' element={<MyVideos />}/>
    </Routes>
    </BrowserRouter>
   )
