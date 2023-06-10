@@ -4,7 +4,7 @@ import NavBar from './component/navbar/NavBar'
 import Landing from './component/Landing/Landing'
 import SignIn from './component/signin/SignIn'
 import Register from './component/register/Register'
-import Search from './component/Search/search'
+import Search from "./component/search/Search"
 
 
 
