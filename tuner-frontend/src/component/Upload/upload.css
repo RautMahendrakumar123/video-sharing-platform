@@ -1,26 +1,29 @@
 .Container {
-    width: 500px;
-    height:400px;
+    width: 100%;
+    height:100%;
     margin:10% 28%;
     position: absolute;
-    top: 0;
-    left: 0;
+    /* top: 0; */
+    /* left: 0; */
     /* background-color:rgb(37, 48, 37); */
     flex-direction: column;
     border-radius: 3%;
     display: flex;
     z-index: 2;
+    justify-content: space-evenly;
+
 }
 
 .Wrapper {
-    height: 400px;
+    height: 500px;
     width: 500px;
-    background-color: rgba(0, 0, 0, 0.623);
+    background-color: black;
     color: white;
     padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  
  
 }
 
@@ -38,4 +41,117 @@
     margin-left: 3%;
     margin-right: 3%;
     height: 150px;
+
+  }
+  .category,.visibility{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .description textarea{
+height: 30px;
+background-color: black;
+color: white;
+border: none;
+border-bottom: 1px solid white;
+  }
+  .name input{
+    background-color: black;
+color: white;
+border: none;
+border-bottom: 1px solid white;
+padding: 14px 4px;
+  }
+  .bottom-select{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .upload-thumbnail input{
+opacity: 0;
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+width: 100%;
+height: 100%;
+padding: 0 5px;
+  }
+  .upload-thumbnail{
+    
+    position: relative;
+    border: 1px solid white;
+
+    background-color: black;
+    color: white;
+    font-size: 0.8em;
+    
+    height: 23px;
+    padding: 3px 8px;
+
+
+
+  }
+  .upload-thumbnail p{
+position: relative;
+bottom: 12px;
+  }
+  .bottom-select div select{
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 6px 9px;
+  }
+  .file-input h3{
+  position: absolute;
+  bottom: 1.4em;
+  left: 6.8em;
+  
+  }
+  .file-input
+  {
+  position: relative;
+  background-color: #4B4B5F;
+  
+
+
+  }
+  .file-input h2{
+    color: white;
+  }
+  .file-input input{
+    opacity: 0;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .file-input input:hover{
+    cursor: pointer;
+  }
+  .upload-thumbnail input:hover{
+    cursor: pointer;
+  }
+  .submit{
+    width: 100px;
+    background-color: #C4B4F8;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+   border: 1px solid white;
+   position: relative;
+   left: 40%;
+   font-weight: 700;
+  }
+  .submit:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    font-weight: 700;
   }

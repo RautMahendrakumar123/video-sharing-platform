@@ -27,7 +27,8 @@ useEffect(() => {
   }
 
   const signout = ()=>{
-    localStorage.setItem('token','')
+
+    localStorage.removeItem("token")
     settoggle(false)
   }
 

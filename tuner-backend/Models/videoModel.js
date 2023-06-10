@@ -5,7 +5,7 @@ const VideoModel = new mongoose.Schema(
     userid: {
       type: String,
     },
-    tittle: {
+    title: {
       type: String,
       required: true,
     },

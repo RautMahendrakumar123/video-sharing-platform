@@ -20,6 +20,7 @@ mongoose.connection.on("error",()=>{
 })
 
 app.use(require("./Routes/auth"))
+app.use(require('./Routes/uploadVideo'))
 app.listen(process.env.PORT,()=>{
     console.log(`server running on port ${process.env.PORT}`)
 })
