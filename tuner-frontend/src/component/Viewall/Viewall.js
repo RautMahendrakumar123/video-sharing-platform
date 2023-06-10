@@ -1,5 +1,5 @@
 import React from 'react'
-import Cards from '../Landing/Card'
+import Cards from '../Cards/Card'
 import "./viewall.css"
 function Viewall({data,setData}) {
     const arr=["https://bloody-disgusting.com/wp-content/uploads/2014/03/godzilla-banner2.jpg",

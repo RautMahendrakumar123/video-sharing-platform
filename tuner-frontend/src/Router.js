@@ -6,6 +6,7 @@ import SignIn from './component/signin/SignIn'
 import Register from './component/register/Register'
 import Search from './component/search/Search'
 
+
 const Router = () => {
   return (
    <BrowserRouter>
