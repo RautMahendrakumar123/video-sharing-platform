@@ -7,7 +7,7 @@ const NavBar = () => {
   let navigate = useNavigate()
   const newpage = (e) => {
     if (e.key === 'Enter') {
-      navigate("/search")
+      navigate("/Search")
     }
   }
   return (
