@@ -25,7 +25,11 @@ const resisterSchema=new mongoose.Schema({
      confirmpassword:{
         type:String
      }
-})
+},
+{
+   timestamps:true
+}
+)
 
 RegisterModel=mongoose.model("user",resisterSchema)
 
