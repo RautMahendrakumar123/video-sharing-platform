@@ -1,15 +1,24 @@
 const express=require('express')
 const router=express.Router()
 const Video =require("../Models/videoModel")
+const Validation = require("../Validation/Validation")
 
-router.post("/upload",async(req,resp)=>{
+router.post("/upload",Validation,async(req,resp)=>{
     console.log(req.body)
-    const data=await new Video(req.body)
+   try {
+    const data=await new Video({...req.body, userid:req.userid})
     await data.save()
     resp.status(200).json({
         status:"saved successfully"    })
+   } catch (error) {
+    resp.status(400).json({
+        message: error.message
+    })
+   }
     
 })
+
+router.get('/myvideos', )
 
 module.exports=router
 

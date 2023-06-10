@@ -25,7 +25,8 @@ const Upload = ({ setOpen }) => {
             fetch("http://localhost:8080/upload",{
                 method:"POST",
                 headers:{
-                   "Content-Type":"application/json"
+                   "Content-Type":"application/json",
+                   "Authorization": localStorage.getItem('token')
                 },
                 body:JSON.stringify({
                     ...upload,
