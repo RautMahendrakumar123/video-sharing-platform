@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Navbar.css'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import Upload from '../Upload/Upload';
 
@@ -25,6 +25,12 @@ useEffect(() => {
       navigate("/Search")
     }
   }
+
+  const signout = ()=>{
+    localStorage.setItem('token','')
+    settoggle(false)
+  }
+
   return (
     <>
 
@@ -41,11 +47,13 @@ useEffect(() => {
      <Link to={'/'}><h2>Tuner</h2></Link>
      <input type='text' placeholder='Search' onKeyDown={newpage} />
      <div className='buttons'>
-       <Link to='/signin'><span>My videos</span></Link>
+       <span onClick={()=>{
+ navigate('/myvideos')
+       }}>My videos</span>
        <span>|</span>
        <span style={{cursor:'pointer'}} onClick={()=>{setOpen(true)}}>Upload</span>
        <span>|</span>
-       <span>Sign out</span>
+       <span onClick={signout} style={{cursor:"pointer"}}>Sign out</span>
      </div>
    </div>}
    {open && <Upload setOpen={setOpen}/>}

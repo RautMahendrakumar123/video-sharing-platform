@@ -1,14 +1,18 @@
 
 import React, { useState } from 'react'
 import './signin.css'
-import {Navigate, useNavigate}  from 'react-router-dom'
+import { useNavigate}  from 'react-router-dom'
 
 
 const SignIn = () => {
+
+const Navigate=useNavigate()
+
   const [formdata,setFormdata]=useState({
     email:"",
     password:"",
   })
+
 
   const handlechange=(e)=>{
 setFormdata({
@@ -28,6 +32,9 @@ setFormdata({
     .then(res=>res.json()).then((data)=>{
       console.log(data);
       localStorage.setItem('token',data.token)
+      setTimeout(()=>{
+        Navigate("/")
+      },2000)
     })
   }
 
