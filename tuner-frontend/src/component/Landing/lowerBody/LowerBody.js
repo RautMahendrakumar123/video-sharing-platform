@@ -1,5 +1,5 @@
 import React from 'react'
-import Cards from '../Card'
+import Cards from '../../Cards/Card'
 import "./lowerbody.css"
 
 const LowerBody = ({data,setData}) => {
