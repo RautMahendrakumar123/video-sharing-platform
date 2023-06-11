@@ -15,6 +15,7 @@ const [open, setOpen] = useState(false);
   }
   const signout = ()=>{
     localStorage.removeItem("token")
+    setOpen(false);
   }
   return (
     <>
