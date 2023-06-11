@@ -7,7 +7,7 @@ const Search = () => {
 const [enter, setEnter]= useState([])
   const {arr,setArray, inputs,setShow} = useContext(context)
  useEffect(() => {
-  fetch('http://localhost:8080/home')
+  fetch('https://tuner-backend-azda.onrender.com/home')
   .then(res=>res.json())
   .then(result=>{
     setShow(false)

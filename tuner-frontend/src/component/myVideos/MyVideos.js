@@ -10,7 +10,7 @@ const MyVideos = () => {
 const {myvideo, setMyvid,select,setShow} = useContext(context)
 const token = localStorage.getItem('token')
   useEffect(() => {
-    fetch('http://localhost:8080/myvideos', {
+    fetch('https://tuner-backend-azda.onrender.com/myvideos', {
       method: 'get',
       headers: {
         "Authorization": token

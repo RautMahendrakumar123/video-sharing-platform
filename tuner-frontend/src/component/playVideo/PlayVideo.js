@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import "./PlayVideo.css"
 import { useContext } from 'react'
 import { context } from '../../Context/Context'
-import { useParams } from 'react-router-dom'
+
 import Cards from '../Cards/Card'
 function PlayVideo() {
-  const params=useParams()
+
   const {playvideo,setPlayVideo,arr,setArray,setShow}=useContext(context) 
 
   return (

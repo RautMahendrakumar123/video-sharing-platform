@@ -7,7 +7,7 @@ import {context} from '../../../Context/Context'
 const LowerBody = ({data,setData}) => {
  const {arr,setArray,show,setShow} = useContext(context)
   useEffect(()=>{
-   fetch('http://localhost:8080/home')
+   fetch('https://tuner-backend-azda.onrender.com/home')
    .then(res=>res.json())
    .then(result=>{
     setShow(false)
