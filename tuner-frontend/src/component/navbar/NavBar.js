@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import './Navbar.css'
 import { Link, Navigate } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import Upload from '../Upload/Upload';
+import{context} from '../../Context/Context'
 
 const NavBar = () => {
+  const {inputs, setInputs} = useContext(context)
 
 const [open, setOpen] = useState(false);
   let navigate = useNavigate()
@@ -15,13 +17,16 @@ const [open, setOpen] = useState(false);
   }
   const signout = ()=>{
     localStorage.removeItem("token")
+    window.location.reload(true);
+   
     setOpen(false);
   }
   return (
     <>
-    {!localStorage.getItem("token")? <div className='navbar'>
+    {!localStorage.getItem('token')
+    ? <div className='navbar'>
       <Link to={'/'}><h2>Tuner</h2></Link>
-      <input type='text' placeholder='Search' onKeyDown={newpage} />
+      <input value={inputs} onChange={(e)=>{setInputs(e.target.value)}} type='text' placeholder='Search' onKeyDown={newpage} />
       <div className='buttons'>
         <Link to='/signin'><span>Login</span></Link>
         <span>|</span>
@@ -30,7 +35,7 @@ const [open, setOpen] = useState(false);
     </div> :
      <div className='navbar'>
      <Link to={'/'}><h2>Tuner</h2></Link>
-     <input type='text' placeholder='Search' onKeyDown={newpage} />
+     <input type='text' value={inputs} onChange={(e)=>{setInputs(e.target.value)}} placeholder='Search' onKeyDown={newpage} />
      <div className='buttons'>
        <span onClick={()=>{
  navigate('/myvideos')

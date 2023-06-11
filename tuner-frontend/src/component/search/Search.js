@@ -1,25 +1,35 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Cards from '../../component/Cards/Card'
 import './search.css'
+import {context} from '../../Context/Context'
 
 const Search = () => {
+const [enter, setEnter]= useState([])
+console.log('hii')
 
-    const arr=["https://bloody-disgusting.com/wp-content/uploads/2014/03/godzilla-banner2.jpg",
-    "https://e0.pxfuel.com/wallpapers/182/151/desktop-wallpaper-godzilla-king-of-the-monsters-banner-cartoon-godzilla.jpg",
-    "https://collider.com/wp-content/uploads/the-avengers-movie-poster-banners-03.jpg",
-    "https://upload.wikimedia.org/wikipedia/en/0/07/Rana_Naidu.jpg","https://bloody-disgusting.com/wp-content/uploads/2014/03/godzilla-banner2.jpg",
-    "https://e0.pxfuel.com/wallpapers/182/151/desktop-wallpaper-godzilla-king-of-the-monsters-banner-cartoon-godzilla.jpg",
-    "https://collider.com/wp-content/uploads/the-avengers-movie-poster-banners-03.jpg",
-    "https://upload.wikimedia.org/wikipedia/en/0/07/Rana_Naidu.jpg","https://bloody-disgusting.com/wp-content/uploads/2014/03/godzilla-banner2.jpg",
-    "https://e0.pxfuel.com/wallpapers/182/151/desktop-wallpaper-godzilla-king-of-the-monsters-banner-cartoon-godzilla.jpg",
-    "https://collider.com/wp-content/uploads/the-avengers-movie-poster-banners-03.jpg",
-    "https://upload.wikimedia.org/wikipedia/en/0/07/Rana_Naidu.jpg"]
+  const {arr,setArray, inputs} = useContext(context)
+ useEffect(() => {
+  fetch('http://localhost:8080/home')
+  .then(res=>res.json())
+  .then(result=>{
+   setArray(result)})
+  const query= [...arr]
+  console.log(query)
+  const searchItem = query.filter((ele, i)=>{
+    return(
+      ele.title.toLowerCase().includes(inputs.toLowerCase())
+    )
+  })
+  console.log(searchItem)
+  setEnter(searchItem)
+ }, [inputs])
+ 
   return (
     <div className='lowerbody-container'>
        {
-    arr.map(ele=>{
+    enter.map(ele=>{
       return(
-        <Cards url={ele}/>
+        <Cards obj={ele}/>
       )
     })
   }

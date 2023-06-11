@@ -148,7 +148,7 @@ const Upload = ({ setOpen }) => {
             <div className='visibility'>
                
                 <select name="visibility" id="Public" onChange={handleChange}>
-                    <option value="Public">Public</option>
+                    <option selected='selected' value="Public">Public</option>
                     <option value="Private">Private</option>
                 </select>
             </div>
