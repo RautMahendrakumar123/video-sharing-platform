@@ -2,12 +2,41 @@
     height: 100%;
     width: 100%;
     background-color: #0F121FF5;
+    display: flex;
+    justify-content: space-evenly;
+    height: 150vh;
 }
 .videoBox{
-    height: 600px;
-    width: 800px;
+    height: 450px;
+    width: 65%;
+    position: relative;
+    bottom: -25px;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: left;
 }
 .videoBox video{
     width: 100%;
     height: 100%;
+}
+.suggession{
+    height: 600px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.suggession img{
+    margin: 10px 0px;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+.videoBox h2{
+    color: white;
+    width: 800px;
+    margin-top: 30px;
+}
+.videoBox p{
+    color: white;
 }
