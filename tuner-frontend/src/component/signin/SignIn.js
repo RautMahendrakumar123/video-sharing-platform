@@ -30,11 +30,12 @@ setFormdata({
       body:JSON.stringify(formdata)
     })
     .then(res=>res.json()).then((data)=>{
-      console.log(data);
-      localStorage.setItem('token',data.token)
-      setTimeout(()=>{
+     
+      if(!data.error){
+        localStorage.setItem('token',data.token)
         Navigate("/")
-      },2000)
+      }
+      
     })
   }
 

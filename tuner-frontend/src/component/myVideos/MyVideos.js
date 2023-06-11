@@ -13,7 +13,6 @@ const MyVideos = () => {
     "https://e0.pxfuel.com/wallpapers/182/151/desktop-wallpaper-godzilla-king-of-the-monsters-banner-cartoon-godzilla.jpg",
     "https://collider.com/wp-content/uploads/the-avengers-movie-poster-banners-03.jpg",
     "https://upload.wikimedia.org/wikipedia/en/0/07/Rana_Naidu.jpg"]
- 
   return <>
   <div className='container'>
     <div className='left-side'>
@@ -30,12 +29,9 @@ const MyVideos = () => {
     })
   }
         </div>
-    
     </div>
     <div className='right-side'></div>
-
   </div>
   </>
 }
-
 export default MyVideos

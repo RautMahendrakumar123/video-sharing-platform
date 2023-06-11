@@ -1,0 +1,13 @@
+.DisplayVideo{
+    height: 100%;
+    width: 100%;
+    background-color: #0F121FF5;
+}
+.videoBox{
+    height: 600px;
+    width: 800px;
+}
+.videoBox video{
+    width: 100%;
+    height: 100%;
+}

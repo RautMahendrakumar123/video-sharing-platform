@@ -20,11 +20,9 @@ router.post("/signup",async(req,resp)=>{
             error:"password does not match"
         })
     }
-    if(req.body.confirmpassword){
-    
+    if(req.body.confirmpassword){   
     const  saltvalue=await bcrypt.genSalt(8)
     const hashedvalue=await bcrypt.hash(req.body.password,saltvalue)
-    
     const data=new RegisterModel({...req.body,password:hashedvalue,confirmpassword:hashedvalue})
 
     await data.save()
@@ -57,8 +55,6 @@ router.post("/signin",async(req,resp)=>{
     resp.status(200).json({
         token
     })
-    
-
 })
 
 

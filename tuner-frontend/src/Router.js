@@ -7,11 +7,14 @@ import Register from './component/register/Register'
 import Search from "./component/search/Search"
 import MyVideos from './component/myVideos/MyVideos'
 
-
+import ContextPro from './Context/Context';
+import PlayVideo from './component/playVideo/PlayVideo'
 
 const Router = () => {
   return (
+   
    <BrowserRouter>
+   <ContextPro >
    <NavBar />
    <Routes>
     <Route path='/' element={<Landing />}/>
@@ -19,8 +22,12 @@ const Router = () => {
     <Route path='/Register' element={<Register />}/>
     <Route path='/Search' element={<Search />}/>
     <Route path='/myvideos' element={<MyVideos />}/>
+    <Route path='/Video' element={<PlayVideo />}/>
    </Routes>
+   </ContextPro>
+ 
    </BrowserRouter>
+  
   )
 }
 
