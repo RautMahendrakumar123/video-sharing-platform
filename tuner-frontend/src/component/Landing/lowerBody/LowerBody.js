@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Cards from '../../Cards/Card'
 import "./lowerbody.css"
 
 const LowerBody = ({data,setData}) => {
-  const arr=["https://bloody-disgusting.com/wp-content/uploads/2014/03/godzilla-banner2.jpg",
-"https://e0.pxfuel.com/wallpapers/182/151/desktop-wallpaper-godzilla-king-of-the-monsters-banner-cartoon-godzilla.jpg",
-"https://collider.com/wp-content/uploads/the-avengers-movie-poster-banners-03.jpg",
-"https://upload.wikimedia.org/wikipedia/en/0/07/Rana_Naidu.jpg"]
+  const [arr,setArr]=useState([])
+  useEffect(()=>{
+   fetch('http://localhost:8080/home')
+   .then(res=>res.json())
+   .then(result=>{
+    setArr(result)
+   })
+  },[])
   return (<>
     <div className='view'>
       <p>Recent</p>
@@ -18,7 +22,7 @@ const LowerBody = ({data,setData}) => {
   {
     arr.map(ele=>{
       return(
-        <Cards url={ele}/>
+        <Cards obj={ele}/>
       )
     })
   }

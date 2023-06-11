@@ -5,37 +5,20 @@ import { useNavigate } from 'react-router-dom'
 import Upload from '../Upload/Upload';
 
 const NavBar = () => {
-  const token=localStorage.getItem("token");
 
-const [toggle, settoggle] = useState(false);
 const [open, setOpen] = useState(false);
-
-useEffect(() => {
-  if (token) {
-    settoggle(true);
-  } else {
-    settoggle(false);
-  }
-}, [token])
-
-
   let navigate = useNavigate()
   const newpage = (e) => {
     if (e.key === 'Enter') {
       navigate("/Search")
     }
   }
-
   const signout = ()=>{
-
     localStorage.removeItem("token")
-    settoggle(false)
   }
-
   return (
     <>
-
-    {!toggle? <div className='navbar'>
+    {!localStorage.getItem("token")? <div className='navbar'>
       <Link to={'/'}><h2>Tuner</h2></Link>
       <input type='text' placeholder='Search' onKeyDown={newpage} />
       <div className='buttons'>
