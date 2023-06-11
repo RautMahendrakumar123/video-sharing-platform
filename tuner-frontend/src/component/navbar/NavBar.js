@@ -37,7 +37,7 @@ const [open, setOpen] = useState(false);
      <Link to={'/'}><h2>Tuner</h2></Link>
      <input type='text' value={inputs} onChange={(e)=>{setInputs(e.target.value)}} placeholder='Search' onKeyDown={newpage} />
      <div className='buttons'>
-       <span onClick={()=>{
+       <span style={{cursor:'pointer'}} onClick={()=>{
  navigate('/myvideos')
        }}>My videos</span>
        <span>|</span>
