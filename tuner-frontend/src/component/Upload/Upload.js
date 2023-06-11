@@ -2,10 +2,11 @@ import React, { useEffect } from 'react'
 import './upload.css'
 import {BsCloudUpload} from "react-icons/bs"
 import { useState } from 'react'
+import Toast from 'react-bootstrap/Toast';
 
 const Upload = ({ setOpen }) => {
     
-    
+    const [loader,setLoader]=useState(false)
     const [upload,setUpload]=useState({
         title:"",
         desc:"",
@@ -21,6 +22,7 @@ const Upload = ({ setOpen }) => {
 
     useEffect(()=>{
         console.log(upload)
+       
         if(image && video){
             fetch("http://localhost:8080/upload",{
                 method:"POST",
@@ -37,6 +39,7 @@ const Upload = ({ setOpen }) => {
             })
             .then(res=>res.json())
             .then(result=>{
+                setLoader(false)
                 console.log(result)              
             })
         }
@@ -58,11 +61,9 @@ const Upload = ({ setOpen }) => {
             return {...prev,[e.target.name]:e.target.files[0]}
         })
     }
-    const uploadData=()=>{
-        // fetch()
-    }
 
     const newpost = () => {
+        setLoader(true)
         console.log(upload)
         const videofile=new FormData()
         videofile.append("file", upload.videoUrl)
@@ -107,6 +108,23 @@ const Upload = ({ setOpen }) => {
     
     return (
         <div className='Container'>
+           { loader && <Toast
+          className="d-inline-block m-1"
+          // bg={variant.toLowerCase()}
+          // key={idx}
+          style={{backgroundColor:'green', color: 'white', width: '300px', position: 'relative', left:'30px'}}
+        >
+          <Toast.Header>
+            <img
+              src="holder.js/20x20?text=%20"
+              className="rounded me-2"
+              alt=""
+            />
+          </Toast.Header>
+          <Toast.Body >
+            video uploading...
+          </Toast.Body>
+        </Toast>}
             <div className='Wrapper'>
                 <div className='heading-div'>
 
@@ -161,7 +179,7 @@ const Upload = ({ setOpen }) => {
                 />
             </div>
             </div>
-            <button onClick={newpost} className='submit'>SUBMIT</button>
+            <button onClick={()=>newpost()} className='submit'>SUBMIT</button>
             </div>
         </div>
     )

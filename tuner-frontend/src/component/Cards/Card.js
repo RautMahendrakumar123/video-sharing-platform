@@ -12,7 +12,7 @@ const Cards = ({obj}) => {
 <div className='card-container' style={{height:"160px",width:"16.5em",marginBottom:"30px"}}>
 <img style={{borderRadius:"5px"}} onClick={()=>{if(!show){
   console.log(obj)
-  setPlayVideo(obj.videoUrl)
+  setPlayVideo(obj)
   console.log(playvideo)
 navigate(`/Video`)
 } else{
