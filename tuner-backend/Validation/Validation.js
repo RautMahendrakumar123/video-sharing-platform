@@ -9,7 +9,6 @@ module.exports = (req, resp, next)=>{
         })
     }
     let token = req.headers.authorization
-    console.log(token)
     jsonwebtoken.verify(token, process.env.SECRET_KEY, (err, payload)=>{
         if (err) {
            return resp.status(404).json({

@@ -1,15 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./myvideos.css"
 import Cards from '../Cards/Card'
+import{context} from '../../Context/Context'
 
 const MyVideos = () => {
-  const [array, setArray] = useState([])
+ 
 
+const {myvideo, setMyvid} = useContext(context)
 
   useEffect(() => {
-    fetch('http://localhost:8080/home')
+    console.log('hello from my vid')
+    fetch('http://localhost:8080/myvideos', {
+      method: 'get',
+      headers: {
+        "Authorization": localStorage.getItem('token')
+      }
+    })
       .then(res => res.json())
-      .then(res => setArray(res))
+      .then(result => setMyvid(result))
   }, [])
 
   return <>
@@ -21,9 +29,9 @@ const MyVideos = () => {
         </div>
         <div className='thumbnail'>
           {
-            array.map(ele => {
+            myvideo.map(ele => {
               return (
-                <Cards url={ele.imgUrl} />
+                <Cards obj={ele} />
               )
             })
           }

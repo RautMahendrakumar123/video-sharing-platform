@@ -27,7 +27,15 @@ resp.json({message:err.message})
 }
 })
 
-
+router.get('/myvideos',Validation,async(req, resp)=>{
+    try {
+        const data = await Video.find({userid:req.userid})
+        console.log(data);
+        resp.status(200).json(data)
+    } catch (err) {
+        resp.json({message:err.message})
+    }
+})
 
 module.exports=router
 
