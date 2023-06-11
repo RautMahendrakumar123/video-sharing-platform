@@ -17,7 +17,7 @@ const Upload = ({ setOpen }) => {
     })
     const [image,setImage]=useState('')
     const [video,setVideo]=useState('')
-    
+   
 
     useEffect(()=>{
         console.log(upload)
@@ -37,7 +37,7 @@ const Upload = ({ setOpen }) => {
             })
             .then(res=>res.json())
             .then(result=>{
-                console.log(result)
+                console.log(result)              
             })
         }
         
