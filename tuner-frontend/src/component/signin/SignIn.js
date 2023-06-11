@@ -49,7 +49,9 @@ setFormdata({
       <div className='left-signin'>
         <div><h1>Tuner</h1></div>
         <div><h3>Enjoy Multiple videos at one place</h3></div>
-        <div><p>Register</p></div>
+        <div><p style={{cursor: 'pointer'}} onClick={()=>{
+          Navigate('/Register')
+        }}>Register</p></div>
       </div>
       <div className='right-signin'>
         <h2 >Sign In</h2>
