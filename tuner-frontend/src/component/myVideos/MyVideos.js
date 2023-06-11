@@ -22,7 +22,7 @@ const token = localStorage.getItem('token')
 
   
  const deleteVideo=(id)=>{
-  fetch( `http://localhost:8080/myvideos/${id}`,{
+  fetch( `https://tuner-backend-azda.onrender.com/myvideos/${id}`,{
     method:'DELETE'
   })
   .then(res=>res.json())
