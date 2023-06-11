@@ -37,5 +37,14 @@ router.get('/myvideos',Validation,async(req, resp)=>{
     }
 })
 
+router.delete('/myvideos/:id',async(req, resp)=>{
+    try {
+        const data = await Video.findByIdAndDelete(req.params.id);
+        resp.status(200).json({message:'data deleted succefully'})
+    } catch (err) {
+        resp.json({message:err.message})
+    }
+})
+
 module.exports=router
 

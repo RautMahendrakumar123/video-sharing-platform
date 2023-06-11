@@ -5,17 +5,17 @@ import {context} from '../../Context/Context'
 
 const Search = () => {
 const [enter, setEnter]= useState([])
-console.log('hii')
-
-  const {arr,setArray, inputs} = useContext(context)
+  const {arr,setArray, inputs,setShow} = useContext(context)
  useEffect(() => {
   fetch('http://localhost:8080/home')
   .then(res=>res.json())
   .then(result=>{
+    setShow(false)
    setArray(result)})
   const query= [...arr]
   console.log(query)
   const searchItem = query.filter((ele, i)=>{
+    
     return(
       ele.title.toLowerCase().includes(inputs.toLowerCase())
     )

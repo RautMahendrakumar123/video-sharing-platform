@@ -3,12 +3,14 @@ import Cards from '../../Cards/Card'
 import "./lowerbody.css"
 import {context} from '../../../Context/Context'
 
+
 const LowerBody = ({data,setData}) => {
- const {arr,setArray} = useContext(context)
+ const {arr,setArray,show,setShow} = useContext(context)
   useEffect(()=>{
    fetch('http://localhost:8080/home')
    .then(res=>res.json())
    .then(result=>{
+    setShow(false)
     setArray(result)
    })
   },[])

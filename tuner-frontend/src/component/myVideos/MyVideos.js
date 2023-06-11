@@ -6,7 +6,7 @@ import{context} from '../../Context/Context'
 const MyVideos = () => {
  
 
-const {myvideo, setMyvid} = useContext(context)
+const {myvideo, setMyvid,select,setShow} = useContext(context)
 
   useEffect(() => {
     console.log('hello from my vid')
@@ -17,8 +17,18 @@ const {myvideo, setMyvid} = useContext(context)
       }
     })
       .then(res => res.json())
-      .then(result => setMyvid(result))
+      .then(result => {setMyvid(result);setShow(true)})
   }, [])
+
+  
+ const deleteVideo=(id)=>{
+  fetch( `http://localhost:8080/myvideos/${id}`,{
+    method:'DELETE'
+  })
+  .then(res=>res.json())
+  .then(res=>console.log(res))
+  window.location.reload()
+ }
 
   return <>
     <div className='container'>
@@ -30,6 +40,7 @@ const {myvideo, setMyvid} = useContext(context)
         <div className='thumbnail'>
           {
             myvideo.map(ele => {
+              
               return (
                 <Cards obj={ele} />
               )
@@ -40,51 +51,40 @@ const {myvideo, setMyvid} = useContext(context)
       </div>
       <div className='right-side'>
         <div className='image'>
-          <img src='https://th.bing.com/th/id/OIP.i-PuW00dHnEEYqeUKLdQiAHaEz?pid=ImgDet&rs=1' width='100%' height='60%' />
+          
+          <video src={select.videoUrl} 
+         controls width='100%' height='60%' />
         </div>
         <div className='right-lower'>
           <div className='head'>
-            <p className='main-heading'>Godzilla Attack in the city</p>
+            <p className='main-heading'>{select.title}</p>
             <p>10 Jan 2020</p>
             <p>14 views</p>
-            <p>200 views</p>
+            <p>{select.views}</p>
           </div>
        
           <div className='description'>
             <p>description</p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+             {select.desc}
             </p>
           </div>
      
           <div className='dropdown'>
             <div className='category'>
-              <select name="category" id="Catergory">
-                <option >Category</option>
-                <option value="Education">Education</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Movie">Movie</option>
-              </select>
+             
+              {select.category}
             </div>
             <div className='visibility'>
-
-              <select name="visibility" id="Public">
-                <option value="Public">Public</option>
-                <option value="Private">Private</option>
-              </select>
+              {select.visibility}
+             
             </div>
-            <div className='visibility'>
-
-              <select name="visibility" id="Public">
-                <option value="Public">Public</option>
-                <option value="Private">Private</option>
-              </select>
-            </div>
+            
           </div>
 
           <div className='buttons'>
-            <button className='btn1'>Delete</button>
-            <button className='btn2'>Save</button>
+            <button className='btn1' onClick={()=>{deleteVideo(select._id)}}>Delete</button>
+            
           </div>
         </div>
 
