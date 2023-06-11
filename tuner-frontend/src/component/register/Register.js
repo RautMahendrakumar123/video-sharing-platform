@@ -32,7 +32,7 @@ const [suctoggle, setsuctoggle] = useState(false);
   const formsubmit =  (e) => {
     e.preventDefault()
 // console.log(formdata)
-     fetch(`http://localhost:8080/signup`, {
+     fetch(`https://tuner-backend-azda.onrender.com/signup`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',

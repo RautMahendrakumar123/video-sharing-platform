@@ -27,7 +27,7 @@ const Upload = ({ setOpen }) => {
         console.log(upload)
        
         if(image && video){
-            fetch("http://localhost:8080/upload",{
+            fetch("https://tuner-backend-azda.onrender.com/upload",{
                 method:"POST",
                 headers:{
                    "Content-Type":"application/json",
