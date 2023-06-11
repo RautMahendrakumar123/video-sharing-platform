@@ -33,7 +33,11 @@ setFormdata({
      
       if(!data.error){
         localStorage.setItem('token',data.token)
+          window.alert('Logged in Successfully')
         Navigate("/")
+      }
+      else{
+        window.alert('Bad Credentials')
       }
       
     })

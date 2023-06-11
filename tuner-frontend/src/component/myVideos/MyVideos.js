@@ -2,18 +2,18 @@ import React, { useContext, useEffect, useState } from 'react'
 import "./myvideos.css"
 import Cards from '../Cards/Card'
 import{context} from '../../Context/Context'
+import { useNavigate } from 'react-router-dom'
 
 const MyVideos = () => {
- 
+ const Navigate = useNavigate()
 
 const {myvideo, setMyvid,select,setShow} = useContext(context)
-
+const token = localStorage.getItem('token')
   useEffect(() => {
-    console.log('hello from my vid')
     fetch('http://localhost:8080/myvideos', {
       method: 'get',
       headers: {
-        "Authorization": localStorage.getItem('token')
+        "Authorization": token
       }
     })
       .then(res => res.json())
@@ -31,6 +31,7 @@ const {myvideo, setMyvid,select,setShow} = useContext(context)
  }
 
   return <>
+  {token?
     <div className='container'>
       <div className='left-side'>
         <div className='heading'>
@@ -91,7 +92,8 @@ const {myvideo, setMyvid,select,setShow} = useContext(context)
 
       </div>
 
-    </div>
+    </div> :
+    Navigate('/')}
   </>
 }
 export default MyVideos

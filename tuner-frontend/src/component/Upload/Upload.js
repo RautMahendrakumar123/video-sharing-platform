@@ -3,10 +3,13 @@ import './upload.css'
 import {BsCloudUpload} from "react-icons/bs"
 import { useState } from 'react'
 import Toast from 'react-bootstrap/Toast';
+import {useNavigate}  from 'react-router-dom'
 
 const Upload = ({ setOpen }) => {
+  const Navigate = useNavigate()
     
     const [loader,setLoader]=useState(false)
+    const [loaded,setLoaded]=useState(false)
     const [upload,setUpload]=useState({
         title:"",
         desc:"",
@@ -40,6 +43,7 @@ const Upload = ({ setOpen }) => {
             .then(res=>res.json())
             .then(result=>{
                 setLoader(false)
+                setLoaded(true)
                 console.log(result)              
             })
         }
@@ -124,6 +128,26 @@ const Upload = ({ setOpen }) => {
           <Toast.Body >
             video uploading...
           </Toast.Body>
+        </Toast>}
+        { loaded && <Toast
+          className="d-inline-block m-1"
+          // bg={variant.toLowerCase()}
+          // key={idx}
+          style={{backgroundColor:'green', color: 'white', width: '300px', position: 'relative', left:'30px'}}
+        >
+          <Toast.Header>
+            <img
+              src="holder.js/20x20?text=%20"
+              className="rounded me-2"
+              alt=""
+            />
+          </Toast.Header>
+          <Toast.Body >
+            video uploaded successfully
+          </Toast.Body>
+         {loaded?
+          (setOpen(false),
+           Navigate('/myvideos')): setOpen(true)}
         </Toast>}
             <div className='Wrapper'>
                 <div className='heading-div'>
