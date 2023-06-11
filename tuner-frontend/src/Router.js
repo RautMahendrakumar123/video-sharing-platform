@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import NavBar from './component/navbar/NavBar'
 import Landing from './component/Landing/Landing'
@@ -9,8 +9,9 @@ import MyVideos from './component/myVideos/MyVideos'
 
 import ContextPro from './Context/Context';
 import PlayVideo from './component/playVideo/PlayVideo'
-
+import { context } from './Context/Context'
 const Router = () => {
+  // const {playvideo}=useContext(context)
   return (
    
    <BrowserRouter>

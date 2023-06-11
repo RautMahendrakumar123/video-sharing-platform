@@ -8,12 +8,13 @@ import { useNavigate } from 'react-router-dom'
 const Cards = ({obj}) => {
  const navigate = useNavigate()
   const {playvideo,setPlayVideo,show,setSelect}=useContext(context) 
-
   return (
 <div className='card-container' style={{height:"160px",width:"16.5em",marginBottom:"30px"}}>
 <img style={{borderRadius:"5px"}} onClick={()=>{if(!show){
-navigate('/Video')
-setPlayVideo(obj.videoUrl)
+  console.log(obj)
+  setPlayVideo(obj.videoUrl)
+  console.log(playvideo)
+navigate(`/Video`)
 } else{
   setSelect(obj)
 }

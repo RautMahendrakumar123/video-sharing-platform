@@ -26,6 +26,8 @@ const LowerBody = ({data,setData}) => {
     arr.map((ele, i)=>{
       if(i<4){
       return(
+
+      
         <Cards obj={ele}/>
       )
       }
