@@ -6,7 +6,7 @@ const ContextPro=({children})=>{
   const [inputs, setInputs] = useState('')
   const [myvideo, setMyvid] = useState([])
   const [arr,setArray]=useState([])
-  const [playvideo,setPlayVideo]=useState("")
+  const [playvideo,setPlayVideo]=useState({})
   const [select,setSelect]=useState("")
   const [show,setShow]=useState(false)
   
