@@ -8,7 +8,7 @@ dotenv.config()
 
 app.use(express.json())
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: 'https://tuner-frontend.onrender.com'
 }))
 
 mongoose.connect(process.env.MONGO_URI)
